@@ -1,0 +1,28 @@
+.btn {
+    border: none;
+    padding: 15px 20px;
+    background-color: none;
+    text-transform: uppercase;
+    transition: 0.3s all;
+    &__color {
+        &-black {
+            background: black;
+            color: white;
+            &:hover {
+                background: white;
+                border: 1px solid black;
+                color: black;
+                transition: 0.3s all;
+            }
+        }
+        &-white {
+            border: 1px solid black;
+            color: black;
+            &:hover {
+                background: black;
+                color: white;
+                transition: 0.3s all;
+            }
+        }
+    }
+}

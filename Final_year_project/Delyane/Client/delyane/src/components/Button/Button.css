@@ -1,0 +1,40 @@
+.register__button {
+    border: none;
+    /* padding: 20px 17px; */
+    background: black;
+    color: #fff;
+    border-radius: 3px;
+    font-weight: 600;
+    border: 1px solid #aaa;
+}
+.item__button {
+    border: none;
+    padding: 20px 17px;
+    background: black;
+    color: #fff;
+    border-radius: 3px;
+    font-weight: 600;
+    border: 1px solid #aaa;
+  
+}
+.product__button{
+    border: none;
+    padding: 20px 100px;
+    background: black;
+    color: #fff;
+    border-radius: 3px;
+    font-weight: 600;
+    border: 1px solid #aaa;
+    margin-bottom: 50px;
+}
+.profil__button{
+    border: none;
+    padding: 20px 100px;
+    background: black;
+    color: #fff;
+    border-radius: 3px;
+    font-weight: 600;
+    border: 1px solid #aaa;
+    margin-bottom: 50px;
+}
+  

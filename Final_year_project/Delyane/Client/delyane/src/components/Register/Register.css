@@ -1,0 +1,77 @@
+.register__main {
+    height: 100vh;
+}
+
+.register__content {
+  position: absolute;
+  top: 19%;
+  left: 15%;
+}
+
+.register__form {
+    background-color: var(--white-color);
+    text-align: center;
+    border-radius: 5px;
+    height: 500px;
+    width: 450px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.register__subtitle {
+    margin-bottom: 40px;
+    font-size: 15px;
+}
+
+.register__input {
+    margin-bottom: 18px;
+    padding-left: 10px;
+    height: 45px;
+}
+
+.register__password {
+    margin-bottom: 20px;
+    text-align: right;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.register__button {
+    background-color: var(--black-color);
+    color: var(--white-color);
+    margin-top: 15px;
+    margin-bottom: 25px;
+    height: 44px;
+    border: none;
+    font-weight: 600;
+}
+
+.register__text{
+    font-size: 15px;
+}
+
+.register__login {
+    color: var(--black-color);
+    font-weight: 600;
+}
+
+/* ------- RESPONSIVE -------  */
+
+@media screen and (max-width: 860px) {
+    .register__content {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .register__form {
+        width: 350px;
+    }
+
+    .register__content {
+        top: 55%;
+      }
+}

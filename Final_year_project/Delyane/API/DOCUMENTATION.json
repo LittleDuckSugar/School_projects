@@ -1,0 +1,162 @@
+swagger: "2.0"
+info:
+  description: "DelyaneAPI is the API used to interact with the DB with an easier interface. This API is used by the official client."
+  version: "0.1.0"
+  title: "DelyaneAPI"
+  termsOfService: "http://swagger.io/terms/"
+  contact:
+    email: "delayne@support.fr"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+host: "90.22.250.124:8080"
+basePath: "/"
+tags:
+- name: "products"
+  description: "Everything about products"
+  externalDocs:
+    description: "Find out more"
+    url: "http://90.22.250.124:8080/product"
+schemes:
+- "http"
+paths:
+  /product:
+    post:
+      tags:
+      - "products"
+      summary: "Add a new product to the store"
+      description: ""
+      operationId: "addPet"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Product object that needs to be added to the store"
+        required: true
+        schema:
+          $ref: "#/definitions/Product"
+      responses:
+        "405":
+          description: "Invalid input"
+        "201":
+          description: "Product created"
+  /product/{productId}:
+    get:
+      tags:
+      - "products"
+      summary: "Find product by ID"
+      description: "Returns a single product"
+      operationId: "getProductById"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "productId"
+        in: "path"
+        description: "ID of product to return"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/Product"
+        "400":
+          description: "Invalid ID supplied"
+        "404":
+          description: "Product not found"
+    put:
+      tags:
+      - "products"
+      summary: "Update an existing product"
+      description: ""
+      operationId: "updateProduct"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "productId"
+        in: "path"
+        description: "ID of product to return"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        description: "Product object that needs to be added to the store"
+        required: true
+        schema:
+          $ref: "#/definitions/Product"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/Product"
+        "400":
+          description: "Invalid ID supplied"
+        "404":
+          description: "Product not found"
+        "405":
+          description: "Validation exception"
+    delete:
+      tags:
+      - "products"
+      summary: "Deletes a product"
+      description: ""
+      operationId: "deleteProduct"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "productId"
+        in: "path"
+        description: "Product id to delete"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "Product successfully deleted"
+        "400":
+          description: "Invalid ID supplied"
+        "404":
+          description: "Pet not found"
+definitions:
+  Product:
+    type: "object"
+    required:
+    - "name"
+    - "photoUrls"
+    properties:
+      title:
+        type: "string"
+        example: "La Joconde"
+      description:
+        type: "string"
+        example: "La Joconde est le portrait d'une jeune femme, sur fond d'un paysage montagneux aux horizons lointains et brumeux. Elle est disposée de trois quarts et représentée jusqu'à la taille, bras et mains compris, regardant le spectateur, ce qui est relativement nouveau à l'époque et rompt avec les portraits jusque-là répandus, qui coupent le buste à hauteur des épaules ou de la poitrine et sont entièrement de profil."
+      price:
+        type: "integer"
+        format: "uint64"
+        example: "150000"
+      image:
+        type: "string"
+        example: "path/to/image"
+      uuid_category:
+        type: "string"
+        example: "899a55e4-fdb8-4ebf-84c5-cf1781086f53"
+      uuid_user:
+        type: "string"
+        example: "7bf0c78a-f3c3-4c4a-8374-3c17965038b4"
+      technical:
+        type: "string"
+        example: "Huile sur panneau de bois de peuplier"
+      dimension:
+        type: "string"
+        example: "77×53"
+      authentification:
+        type: "string"
+      support:
+        type: "string"
+externalDocs:
+  description: "Find out more about Swagger"
+  url: "http://swagger.io"

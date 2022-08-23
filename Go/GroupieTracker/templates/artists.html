@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/style.css">
+
+    <title>Groupie Tracker</title>
+</head>
+
+<body>
+    {{template "header.html" .}}
+
+    <main>
+        <div class="title__page">
+            <h1>
+                Groupie Tracker
+            </h1>
+        </div>
+
+        <div class="room__grid">
+            {{range $artist := .}}
+            <a href="/artist/{{$artist.ID}}">
+                <div class="room__card">
+                    <div class="room__img">
+                        <img src="{{$artist.Image}}" alt="{{$artist.Name}}" />
+                    </div>
+                    <div class="room__data">
+                        <h2>{{$artist.Name}}</h2>
+                        <p>
+                            <button class="btn btn__color-black">See artist</button>
+                        </p>
+                    </div>
+                </div>
+            </a>
+            {{end}}
+        </div>
+
+    </main>
+
+    {{template "footer.html" .}}
+</body>
+
+</html>

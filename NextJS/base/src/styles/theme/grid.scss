@@ -1,0 +1,20 @@
+.products__grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    .product__card {
+        width: 15%;
+        margin: 20px;
+        .product__img {
+            img {
+                width: 150px;
+                height: auto;
+            }
+        }
+        .product__data {
+            h2 {
+                font-size: 15px;
+            }
+        }
+    }
+}

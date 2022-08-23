@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/style.css">
+
+    <title>Groupie Tracker | {{.Name}}</title>
+</head>
+
+<body>
+    {{template "header.html" .}}
+
+    <main>
+        <div class="title__page">
+            <h1>
+                {{.Name}}
+            </h1>
+        </div>
+
+        <div>
+            <p>Members :</p>
+            <ul>
+                {{range .Members}}
+                <li>
+                    {{.}}
+                </li>
+                {{end}}
+            </ul>
+            <p>First album : {{.FirstAlbum}}</p>
+            <p>Creation date : {{.CreationDate}}</p>
+            <img src="{{.Image}}" alt="{{.Name}}">
+        </div>
+
+        <div>
+            <p>Concerts locations : </p>
+            <ul>
+                {{range .Locations.Locations}}
+                <li>
+                    {{.}}
+                </li>
+                {{end}}
+            </ul>
+        </div>
+    </main>
+
+    {{template "footer.html" .}}
+</body>
+
+</html>

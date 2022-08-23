@@ -1,0 +1,36 @@
+.product__main{
+    height: 250vh;
+}
+.product__title{
+    text-align: center;
+}
+.product__content{
+    color: var(--black-color);
+    position: absolute;
+    top: 20%;
+    right: 0;
+    left: 0;
+}
+.product__list {
+    display: flex;
+    padding: 80px 100px; 
+    align-items: center;
+    justify-content: space-between;
+}
+.product__art{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+}
+select {
+    cursor: pointer;
+    background-color: black;
+    border: 1px solid white;
+    color: white;
+    margin-left: 20px;
+    padding: 20px;
+    font-size: 30px;
+}
+.product__category{
+    padding-bottom: 100px;
+}

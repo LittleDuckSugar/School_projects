@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "899667696625",
+    "project_id": "cours-1---dev-mobile",
+    "storage_bucket": "cours-1---dev-mobile.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:899667696625:android:b3f4509897d8e36a0f0250",
+        "android_client_info": {
+          "package_name": "com.example.tpfinal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "899667696625-e23b1dcf1himt1a5pmfvdnqi11dm01u4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYFWfrOcXmMcjZ4hi3G18ApqVqVCEpPus"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "899667696625-e23b1dcf1himt1a5pmfvdnqi11dm01u4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

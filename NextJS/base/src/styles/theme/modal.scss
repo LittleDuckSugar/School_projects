@@ -1,0 +1,58 @@
+.overlay {
+    position: fixed;
+    left: 0%;
+    top: 0%;
+    height: 100%;
+    width: 100%;
+    background: #00000063;
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    width: 40%;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.modal__header {
+    position: relative;
+    .close__cross {
+        width: 15px;
+        height: 15px;
+        position: absolute;
+        right: 2%;
+        top: 2%;
+        z-index: 99999;
+        span {
+            width: 100%;
+            height: 2px;
+            background-color: black;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            &:first-of-type {
+                transform: translate(-50%, -50%) rotate(45deg);
+            }
+            &:last-of-type {
+                transform: translate(-50%, -50%) rotate(-45deg);
+            }
+        }
+    }
+}
+
+.modal__actions {
+    text-align: right;
+    // display: flex;
+    // justify-content: end;
+    // gap: 20px;
+    .btn {
+        &:first-of-type {
+            margin-right: 20px;
+        }
+    }
+}

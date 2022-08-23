@@ -1,0 +1,50 @@
+// .movie {
+//     &s__grid {
+        
+
+//     &__card {
+//         display: inline-block;
+//         padding: 5px;
+//     }
+
+//     &__about {
+//         text-align: left;
+//         color: white;
+//     }
+
+//     img {
+//         width: 300px;
+//         height: auto;
+//     }
+        
+//     img:hover {
+//         width: 350px;
+//         height: auto;
+//     }
+        
+//     }
+// }
+
+.movies__grid {
+    overflow: auto;
+    white-space: nowrap;
+
+    .movie__card {
+        display: inline-block;
+        padding: 5px;
+        
+        img {
+            width: 300px;
+            height: auto;
+        }
+
+        #movie__recommandation {
+            color: green;
+        }
+
+        .movie__about {
+            text-align: left;
+            color: white;
+        }
+    }
+}

@@ -1,0 +1,26 @@
+.form {
+    width: 40%;
+    margin: 0 auto;
+    &__group {
+        margin-bottom: 20px;
+        input {
+            padding: 10px 5px;
+            border-radius: 3px;
+            transition: 0.3s all;
+            width: 100%;
+            &:focus {
+                transition: 0.3s all;
+                border: 2px solid black;
+                outline: none;
+            }
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            font-weight: 500;
+            font-size: 16px;
+            letter-spacing: 1px;
+        }
+    }
+}

@@ -1,0 +1,52 @@
+.home__content {
+    padding: 0 6% 0 6%;
+    margin-top: 100px;
+}
+.home__swiper{
+    padding-top: 80px;
+    height: 500px;
+}
+.swiper__picture {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 500px;
+    width: 100%;
+}
+.swiper{
+    height: 500px;
+    width: 100%;
+}
+.home__bestsellers {
+    padding: 4% 0 4% 0;
+}
+
+.home__title {
+    font-size: 26px;
+}
+
+.home__subtitle {
+    font-size: 14px;
+    margin-bottom: 40px;
+}
+
+.bestsellers__swiper {
+    overflow: hidden;
+}
+
+.main__product {
+    padding: 0px 20px 60px 40px;
+}
+
+.first__picture {
+    border: 2px solid var(--lightgray-color);
+    width: 28%;
+}
+
+.second__picture {
+    width: 38%;
+}
+
+.third__picture {
+    width: 28%;
+}

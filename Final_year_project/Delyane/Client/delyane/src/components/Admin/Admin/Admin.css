@@ -1,0 +1,84 @@
+.admin__main {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.admin__container {
+    display: grid;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	grid-template-columns: repeat(2, 1fr);
+	background-color: var(--white-color);
+    width: 100%;
+}
+
+.admin__image {
+    background: url('https://media.artsper.com/artwork/1298400_1_m.jpg') no-repeat center;
+	background-size: cover;
+	height: 100vh;
+}
+
+.test2 {
+    padding: 20%;
+}
+
+.admin__title {
+    text-transform: uppercase;
+}
+
+.admin__subtitle {
+    margin-bottom: 40px;
+    font-size: 15px;
+}
+
+.admin__form {
+    border: 2px solid var(--black-color);
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    padding: 8% 10% 8% 10%;
+    width: 375px;
+}
+
+.admin__input {
+    margin-bottom: 25px;
+    padding-left: 10px;
+    height: 40px;
+}
+
+.admin__button {
+    background-color: var(--black-color);
+    color: var(--white-color);
+    margin-top: 20px;
+    font-weight: 600;
+    border: none;
+    height: 40px;
+
+}
+
+/* ------- RESPONSIVE -------  */
+
+@media screen and (max-width: 860px) {
+    .admin__main {
+        height: 100vh;
+    }
+
+    .admin__image {
+        display: none;
+    }
+
+    .admin__form {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .admin__form {
+        width: 325px;
+    }
+}

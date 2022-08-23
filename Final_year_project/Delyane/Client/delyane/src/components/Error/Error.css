@@ -1,0 +1,27 @@
+.error__content {
+    width: 60%;
+    text-align: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.error__text {
+    margin: 20px 0 20px 0;
+    font-size: 18px;
+}
+
+.error__button {
+    background: var(--black-color);
+    color: var(--white-color);
+    margin-top: 40px;
+    font-weight: 600;
+    height: 40px;
+    width: 25%;
+    border: none;
+}
+
+.error__redirection {
+    color: var(--white-color);
+}

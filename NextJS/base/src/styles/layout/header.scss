@@ -1,0 +1,35 @@
+.header {
+    &__main {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+    }
+    &__logo {
+        img {
+            width: 200px;
+        }
+    }
+    &__nav {
+        .nav {
+            &__list {
+                display: flex;
+                align-items: center;
+                list-style: none;
+            }
+            &__item {
+                margin: 0px 20px;
+            }
+            &__link {
+                font-weight: bold;
+                font-size: 20px;
+                &:hover {
+                    color: $primaryColor;
+                }
+            }
+        }
+        // .nav__list {}
+        // .nav__item {}
+        // .nav__link {}
+    }
+}

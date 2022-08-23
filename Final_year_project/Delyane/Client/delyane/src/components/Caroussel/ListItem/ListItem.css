@@ -1,0 +1,44 @@
+.listItem__main {
+    background-color: var(--white-color);
+    color: var(--white-color);
+    margin-right: 10px;
+    width: 250px;
+    height: 300px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.listItem__image {
+    height: 200px;
+    width: 100%;
+}
+
+.listItem__favorite {
+    background-color: var(--black-color);
+    position: absolute;
+    border-radius: 50%;
+    cursor: default;
+    outline: none;
+    border: none;
+    height: 36px;
+    width: 36px;
+}
+
+.listItem__content {
+    margin-top: 15px;
+}
+
+.listItem__icon {
+    color: var(--white-color);
+}
+
+.listItem__text {
+    color: var(--black-color);
+    text-align: center;
+    font-size: 12px;
+}
+
+.listItem__style {
+    margin-top: 20px;
+}
+  
