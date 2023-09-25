@@ -1,0 +1,215 @@
+{% extends "base.html" %}
+{% block title %}Pomona - PassionFroid | Recherche
+{% endblock %}
+
+{% block link %}
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
+	<link rel="stylesheet" href="{{ url_for('static',filename='css/find.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static',filename='css/image.css') }}">
+    <style>
+        #Global #gauche {
+            float:left;
+            width:30%;
+        }
+        #Global #droite {
+            margin-left:30%  ; 
+            margin-right: 5%;
+        }
+    </style>
+{% endblock %}
+
+
+{% block body %}
+
+
+	<!-- <ul class="recherche">
+		<span class="font-recherche">
+			Nous avons trouvez
+			{{images|length}}
+			images qui correspondent a vos critères
+		</span>
+	</ul> -->
+
+	<link
+	class="cssdeck" rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+	<!-- <form action="/find" method="post">
+	    <ul class="pagination modal-1">
+	        <li>
+	            <a href="#" class="prev">&laquo</a>
+	        </li>
+	        <li>
+	            {% if pagination == 1 %}
+	            <a href="#" class="active">1</a>
+	            {% else %}
+	            <a href="#">1</a>
+	            {% endif %}
+	        </li>
+	        <li>
+	            {% if pagination == 2 %}
+	            <a href="#" class="active">2</a>
+	            {% else %}
+	            <a href="#">2</a>
+	            {% endif %}
+	        </li>
+	        <li>
+	            {% if pagination == 3 %}
+	            <a href="#" class="active">3</a>
+	            {% else %}
+	            <a href="#">3</a>
+	            {% endif %}
+	        </li>
+	        <li>
+	            {% if pagination == 4 %}
+	            <a href="#" class="active">4</a>
+	            {% else %}
+	            <a href="#">4</a>
+	            {% endif %}
+	        </li>
+	        <li>
+	            {% if pagination == 5 %}
+	            <a href="#" class="active">5</a>
+	            {% else %}
+	            <a href="#">5</a>
+	            {% endif %}
+	        </li>
+	        <li>
+	            {% if pagination == 6 %}
+	            <a href="#" class="active">6</a>
+	            {% else %}
+	            <a href="#">6</a>
+	            {% endif %}
+	        </li>
+	        <li>
+	            {% if pagination == 7 %}
+	            <a href="#" class="active">7</a>
+	            {% else %}
+	            <a href="#">7</a>
+	            {% endif %}
+	        </li>
+	        <li>
+	            {% if pagination == 8 %}
+	            <a href="#" class="active">8</a>
+	            {% else %}
+	            <a href="#">8</a>
+	            {% endif %}
+	        </li>
+	        <li>
+	            {% if pagination == 9 %}
+	            <a href="#" class="active">9</a>
+	            {% else %}
+	            <a href="#">9</a>
+	            {% endif %}
+	        </li>
+	        <li>
+	            <a href="#" class="next">&raquo;</a>
+	        </li>
+	    </ul>
+	</form><br> -->
+
+    <div id="Global">
+        <div id="gauche"> <div class="frame">
+            <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+
+            <form class="form-signin" action="/find" method="post">
+
+                <label class="fontstyle" for="">Nom image</label>
+                <input class="form-styling" type="text" name="filename">
+
+                <label class="fontstyle" for="">Type image</label>
+                <select class="select form-styling" name="typeImg">
+                    <option value=""></option>
+                    <option value="PassionFroid">Photo PassionFroid</option>
+                    <option value="fournisseur">Photo fournisseur</option>
+                    <option value="logo">Logo</option>
+                </select>
+                <label class="fontstyle" for="">Photo avec produit</label>
+                <select class="select form-styling" name="isProduct">
+                    <option value=""></option>
+                    <option value="oui">Oui</option>
+                    <option value="non">Non</option>
+                </select>
+                <br>
+                <label class="fontstyle" for="">Photo avec humain</label>
+                <select class="select form-styling" name="isHuman">
+                    <option value=""></option>
+                    <option value="oui">Oui</option>
+                    <option value="non">Non</option>
+                </select>
+                <br>
+                <label class="fontstyle" for="">Photo institutionnelle</label>
+                <select class="select form-styling" name="isInstitutional">
+                    <option value=""></option>
+                    <option value="oui">Oui</option>
+                    <option value="non">Non</option>
+                </select>
+                <br>
+                <label class="fontstyle" for="">Crédit photo</label>
+                <input class="form-styling" type="text" name="credit">
+
+                <label class="fontstyle" for="">Catégorie</label>
+                <select class="form-styling" name="category">
+                    <option value=""></option>
+                    <option value="Produit">Produit</option>
+                    <option value="Ambiance">Ambiance</option>
+                </select>
+
+                <label class="fontstyle" for="">Format d'image</label>
+                <select class="form-styling" name="format">
+                    <option value=""></option>
+                    <option value="horizontal">Horizontal</option>
+                    <option value="vertical">Vertical</option>
+                </select>
+
+                <select name="tag" class="selectpicker" multiple data-live-search="true">
+                    {% for tag in tags %}
+                        <option value="{{tag.id}}">{{tag.name}}</option>
+                    {% endfor %}
+                </select>
+
+
+                <button class="btn-animate" type="submit">Rechercher une photo</button>
+                <br>
+
+            </form>
+        </div></div>
+        <div id="droite"> 
+
+            {% for i in range(0, lenImage)  %}
+            <div class="row">
+                {% for j in range((4 * i), ((4 * i) + 4)) %}
+                <div class="col-md-3 col-sm-6">
+                    <div class="product-grid">
+                        <div class="product-image">
+                            <a href="{{ url_for('image.updateImg', id=images[j].id) }}">
+                                <img class="pic-1" src="/static/img/{{images[j].name}}">
+                                <img class="pic-2" src="/static/img/{{images[j].name}}">
+                            </a>
+                        </div>
+                        <div class="product-content">
+                            <h3 class="title"><a href="{{ url_for('image.updateImg', id=images[j].id) }}">{{images[j].name}}</a></h3>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <br>
+            {% endfor %}
+            
+        </div>
+     </div>
+
+
+	</div>
+	{% if images|length == 0 %}
+		<h3>Aucun résultat n'est disponible avec ces critères</h3>
+	{% endif %}
+
+{% endblock body %}
+
+{% block js %}{% endblock %}

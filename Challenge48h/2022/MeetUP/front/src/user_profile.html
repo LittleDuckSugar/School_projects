@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>user profile</title>
+</head>
+<body>
+    <div class="h-screen flex">
+
+        <!-- User informations -->
+        <div class="w-1/4 h-full bg-slate-100 fixed">
+            <!-- <div class="flex justify-center">
+                <img src="../img/1200px-Question_mark_alternate.svg.png" alt="">
+            </div> -->
+            <div class="flex justify-center py-8">
+                <p>Username</p>
+            </div>
+            <div class="flex justify-center py-8">
+                <p>email</p>
+            </div>
+            <div class="flex justify-center py-8">
+                <p>tel</p>
+            </div>
+            <div class="flex justify-center py-8">
+                <p>age</p>
+            </div>
+            <div class="flex justify-center py-8">
+                <p>location</p>
+            </div>
+            <div class="flex justify-center py-8">
+                <button type="button" class="inline-block px-6 py-2.5 bg-slate-400 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-slate-500 hover:shadow-lg focus:bg-slate-400 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-slate-800 active:shadow-lg transition duration-150 ease-in-out">Modifier</button>
+            </div>
+        </div>
+
+        <div class="w-1/4 h-full bg-slate-100 invisible">
+        </div>
+
+        <!-- Event display -->
+        <div class="w-3/4 mt-5">
+
+            <!-- Buttons -->
+            <div class="flex justify-around">
+                <div class="flex justify-center py-8">
+                    <button type="button" class="inline-block px-6 py-2.5 text-white font-medium text-xs leading-tight uppercase rounded shadow-md bg-slate-800 hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:bg-slate-800 active:shadow-lg transition duration-150 ease-in-out">A venir</button>
+                </div>
+                <div class="flex justify-center py-8">
+                    <button type="button" class="inline-block px-6 py-2.5 bg-slate-400 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-slate-500 hover:shadow-lg focus:bg-slate-400 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-slate-800 active:shadow-lg transition duration-150 ease-in-out">Ancien</button>
+                </div>
+            </div>
+
+            <!-- Events -->
+            <div class="grid justify-around m-5 grid-cols-3 gap-3">
+
+                <!-- Card -->
+                <div class="bg-slate-100 rounded my-10 border-4">
+                    <div>
+                        <p>Nom</p>
+                        <p>Description : Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem consequuntur
+                            temporibus ...</p>
+                    </div>
+                    <div class="mt-2">
+                        <p>Organisateur</p>
+                    </div>
+                    <div class="flex justify-between mt-2">
+                        <div>
+                            <p>Date</p>
+                        </div>
+                        <div>
+                            <p>Durée</p>
+                        </div>
+                    </div>
+                    <div class="mt-2">
+                        <div class="flex justify-center">
+                            <button type="button"
+                                class="inline-block px-6 py-2.5 bg-slate-400 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-slate-500 hover:shadow-lg focus:bg-slate-400 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-slate-800 active:shadow-lg transition duration-150 ease-in-out">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

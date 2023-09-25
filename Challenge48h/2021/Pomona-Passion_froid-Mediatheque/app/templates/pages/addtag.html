@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}Pomona - PassionFroid | Tags{% endblock %}
+
+{% block link %}
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
+<link rel="stylesheet" href="{{ url_for('static',filename='css/alert.css') }}">
+{% endblock %}
+
+
+{% block body %}
+
+{% if message != "" %}
+<div class="alert">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    <strong>Info </strong> {{message}}
+</div>
+{% endif %}
+
+<div style="margin: 100px auto; width: 500px; ">
+    <h2 style="text-align: center;">Ajouter un tag</h2>
+    <br><br>
+<form style="text-align: center;" class="form-inline" action="{{ url_for('image.addTag') }}" method="post">
+    <div class="form-group mx-sm-3 mb-2">
+    <label class="fontstyle" for="">Nom tag</label>
+    <input class="form-control" type="text" name="tag" required>
+</div>
+    <button class="btn btn-primary mb-2" type="submit">Ajouter un tag</button>
+
+</form>
+</div>
+
+
+{% endblock body %}
+
+{% block js %}
+
+{% endblock %}

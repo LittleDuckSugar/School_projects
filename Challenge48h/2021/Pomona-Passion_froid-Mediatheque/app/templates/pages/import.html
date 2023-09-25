@@ -1,0 +1,128 @@
+{% extends "base.html" %}
+{% block title %}Pomona - PassionFroid | Importation{% endblock %}
+
+{% block link %}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
+<link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static',filename='css/alert.css') }}">
+{% endblock %}
+
+
+{% block body %}
+
+{% if message_error != "" %}
+<div class="alert">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    <strong>Info </strong> {{message_error}}
+</div>
+{% endif %}
+<div class="frame">
+<form action="/import" method="post" enctype="multipart/form-data">
+
+    <div class="row">
+        <div class="col">
+            <label class="fontstyle" for="">Nom image</label>
+            <input style="border-radius: 0;" class="form-control-file" type="file" name="filename" required multiple>
+        </div>
+        <div class="col">
+            <label class="fontstyle" for="">Type image</label>
+            <select class="form-control" class="select" name="typeImg">
+                <option value="PassionFroid">Photo PassionFroid</option>
+                <option value="fournisseur">Photo fournisseur</option>
+                <option value="logo">Logo</option>
+            </select>
+        </div>
+    </div>
+    <br>
+
+    <div class="row">
+        <div class="col">
+            <label class="fontstyle" for="">Photo avec produit</label>
+            <select class="form-control" name="isProduct">
+                <option value="oui">Oui</option>
+                <option value="non">Non</option>
+            </select>
+        </div>
+        <div class="col">
+            <label class="fontstyle" for="">Photo avec humain</label>
+            <select class="form-control" name="isHuman">
+                <option value="oui">Oui</option>
+                <option value="non">Non</option>
+            </select>
+            </select>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col">
+            <label class="fontstyle" for="">Photo institutionnelle</label>
+            <select class="form-control" name="isInstitutional">
+                <option value="oui">Oui</option>
+                <option value="non">Non</option>
+            </select>
+        </div>
+        <div class="col">
+            <label class="fontstyle" for="">Crédit photo</label>
+            <input class="form-control" type="text" name="credit" required>
+        </div>
+    </div>
+    <br>
+
+    <div class="row">
+        <div class="col">
+            <label class="fontstyle" for="">Droits d'utilisation limités</label>
+            <select class="rightOfUse-js form-control" name="rightOfUse">
+                <option value="oui">Oui</option>
+                <option value="non">Non</option>
+            </select>
+        </div>
+        <div class="col">
+            <div class="isVisible-js">
+                <label class="fontstyle" for="">Copyright</label>
+                <input class="form-control" type="text" name="copyrightImg" required>
+            </div>
+        </div>
+    </div>
+    <br>
+
+
+    <div class="row">
+        <div class="col">
+            <label class="fontstyle" for="">Catégorie</label>
+            <select class="form-control" name="category">
+                <option value="Produit">Produit</option>
+                <option value="Ambiance">Ambiance</option>
+            </select>
+        </div>
+        <div class="col">
+            <div class="isVisible-js">
+                <label class="fontstyle" for="">Date de fin de droits d’utilisation</label>
+                <input class="form-control" type="date" name="endOfUse" required>
+            </div>
+        </div>
+    </div>
+    <br>
+
+<div class="form-group">
+    <label class="fontstyle" for="">Tag</label>
+    <select name="tag" class="selectpicker" multiple data-live-search="true">
+        {% for tag in tags %}
+        <option value="{{tag.id}}">{{tag.name}}</option>
+        {% endfor %}
+    </select>
+</div>
+
+    <button type="submit" class="btn btn-primary">Importer une photo</button>
+
+</form>
+</div>
+
+{% endblock body %}
+
+{% block js %}
+
+{% endblock %}

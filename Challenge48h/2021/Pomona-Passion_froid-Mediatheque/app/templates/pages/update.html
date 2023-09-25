@@ -1,0 +1,138 @@
+{% extends "base.html" %}
+{% block title %}Pomona - PassionFroid | Modification{% endblock %}
+
+{% block link %}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
+<link rel="stylesheet" href="{{ url_for('static',filename='css/update.css') }}">
+{% endblock %}
+
+
+{% block body %}
+
+
+<!-- Display image to edit -->
+<div class="preview">
+    <a href="/static/img/{{image.name}}" download>
+        <img src="/static/img/{{image.name}}">
+        <p style="text-align: center;">Télécharger la photo</p>
+    </a>
+</div>
+
+<div class="frame"></div>
+<form action="{{ url_for('image.updateImg', id=image.id ) }}" method="post">
+
+    <div class="row">
+        <div class="col">
+            <label class="fontstyle" for="">Nom image</label>
+            <input type="text" name="filename" value="{{image.name}}">
+        </div>
+        <div class="col">
+            <label class="fontstyle" for="">Type image</label>
+            <select class="select" name="typeImg">
+                {% if image.typeImg == "PassionFroid" %}
+                <option selected value="PassionFroid">Photo PassionFroid</option>
+                <option value="fournisseur">Photo fournisseur</option>
+                <option value="logo">Logo</option>
+                {% elif image.typeImg == "fournisseur" %}
+                <option value="PassionFroid">Photo PassionFroid</option>
+                <option selected value="fournisseur">Photo fournisseur</option>
+                <option value="logo">Logo</option>
+                {% else %}
+                <option value="PassionFroid">Photo PassionFroid</option>
+                <option value="fournisseur">Photo fournisseur</option>
+                <option selected value="logo">Logo</option>
+                {% endif %}
+            </select>
+        </div>
+        <div class="col">
+            <label class="fontstyle" for="">Photo avec produit</label>
+            <select class="select" name="isProduct">
+                {% if image.isProduct == True %}
+                <option selected value="oui">Oui</option>
+                <option value="non">Non</option>
+                {% else %}
+                <option value="oui">Oui</option>
+                <option selected value="non">Non</option>
+                {% endif %}
+            </select>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="row">
+        <div class="col">
+            <label class="fontstyle" for="">Photo avec humain</label>
+            <select class="select" name="isHuman">
+                {% if image.isHuman == True %}
+                <option selected value="oui">Oui</option>
+                <option value="non">Non</option>
+                {% else %}
+                <option value="oui">Oui</option>
+                <option selected value="non">Non</option>
+                {% endif %}
+            </select>
+        </div>
+        <div class="col">
+            <label class="fontstyle" for="">Photo institutionnelle</label>
+            <select class="select" name="isInstitutional">
+                {% if image.isInstitutional == True %}
+                <option selected value="oui">Oui</option>
+                <option value="non">Non</option>
+                {% else %}
+                <option value="oui">Oui</option>
+                <option selected value="non">Non</option>
+                {% endif %}
+            </select>
+        </div>
+        <div class="col">
+            <label class="fontstyle" for="">Crédit photo</label>
+            <input type="text" name="credit" value="{{image.credit}}">
+        </div>
+    </div>
+
+    <br>
+    
+    <div class="row">
+        <div class="col">
+            <label class="fontstyle" for="">Catégorie</label>
+            <select name="category">
+                {% if image.category_id == 1 %}
+                <option selected value="Produit">Produit</option>
+                <option value="Ambiance">Ambiance</option>
+                {% else %}
+                <option value="Produit">Produit</option>
+                <option selected value="Ambiance">Ambiance</option>
+                {% endif %}
+            </select>
+        </div>
+        <div class="col">
+            <label class="fontstyle" for="">Tags</label>
+            <select name="tag" class="selectpicker" multiple data-live-search="true">
+                {% for tag in tags %}
+                <option value="{{tag.id}}">{{tag.name}}</option>
+                {% endfor %}
+            </select>
+        </div>
+    </div>
+
+    <br>
+
+    <input type="hidden" name="" class="hidden" value="{{tags_image}}">
+
+
+    <button type="submit">Modifier la photo</button>
+</form>
+</div>
+<br>
+<a href="{{ url_for('image.delete', id=image.id ) }}"><button> Supprimer la photo</button></a>
+
+{% endblock body %}
+
+{% block js %}
+<script src="{{ url_for('static',filename='js/tag.js') }}"></script>
+{% endblock %}
