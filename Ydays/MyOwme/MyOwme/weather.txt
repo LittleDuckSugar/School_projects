@@ -1,0 +1,62 @@
+voir si °C est compris par Svoxpico
+
+Présent:
+le ciel est clair
+le ciel est partiellement couvert
+le ciel est totalement couvert
+il pleut légèrement
+il pleut
+il pleut beaucoup
+il y a une tempête
+il y a une tempête de neige
+il y a des orages
+il y a du brouillard
+il neige légèrement
+il neige
+il neige beaucoup
+il y a du verglas
+il grêle
+il y a une tempête de sable
+il y a une tempête de poussière
+il y a de la fumée 
+Alerte ! Allez vous abriter en lieu sûr
+
+et la température est de %temp%°C
+
+
+Futur:
+il fera beau
+le ciel sera partiellement couvert
+le ciel sera totalement couvert
+il pleuvera légèrement
+il pleuvera
+il pleuvera beaucoup
+il y aura une tempête
+il y aura une tempête de neige
+il y aura des orages
+il y aura du brouillard
+il neigera légèrement
+il neigera
+il neigera beaucoup
+il grêlera
+il y aura du verglas
+il y aura une tempête de sable
+il y aura une tempête de poussière
+il y aura de la fumée
+Alerte ! Préparez-vous à vous rendre en lieu sûr
+
+et la température sera de %temp%°C
+il fera %tempmini%°C au minimum / il fera au minimum %tempmini%°C | la température minimum sera de %tempmini%°C
+il fera %tempmax%°C au maximum / il fera au maximum %tempmax%°C | la température maximum sera de %tempmax%°C
+
+
+Urgence :
+Catastophe naturel mode
+tornade / cyclone/ ouragan/ typhon
+cendres volcaniques
+
+Si %humidité et/ou %nuage < 25, choisir entre le reste : (Si pluie, ne pas prendre en compte nuage)
+    "%day%, il pleut/ il y a des averses" (entre 25 et 50%)
+    "%day%, il pleut beaucoup/ il y a de fortes averses" (supérieur à 50%)
+    "%day%, il y a des nuages/ le ciel est obscurcit" (entre 25 et 50%)
+    "%day%, il y a beaucoup de nuages/ le ciel est très sombre" (supérieur à 50%)

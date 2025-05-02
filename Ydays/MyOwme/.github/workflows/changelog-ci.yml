@@ -1,0 +1,53 @@
+#Github action pour créer le fichier Changelog
+
+name: 'Changelog CI'
+on: push
+jobs:
+  
+  #ajout du commit dans le fichier changelog a chaque push sur le repo
+  generate_changelog:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: 'add name and date to changelog' 
+        run: 
+          sed -i "2 i\date = ("$(date +%m/%d/%Y)")\n## [${{ github.actor }}](https://github.com/${{ github.actor }})" ./MyOwme/docs/assets/md/CHANGELOG.md
+      - name: 'add commit to changelog' 
+        run: 
+          sed -i '4 i\${{ github.event.commits[0].message }}\n' ./MyOwme/docs/assets/md/CHANGELOG.md
+      - name: '🖨️ Print changelog to console'
+        run: cat ./MyOwme/docs/assets/md/CHANGELOG.md 
+ 
+
+          #commit du fichier sur le repository
+      - name: Commit files
+        run: |
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add ./MyOwme/docs/assets/md/CHANGELOG.md && git commit -m 'Updated CHANGELOG.md' && echo "push=true" >> $GITHUB_ENV || echo "No changes to CHANGELOG.md"
+
+      #push le nouveau readme sur le repository
+      - name: Push changes
+        if: env.push == 'true'
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
+
+
+
+         
+
+
+
+      
+
+
+
+
+
+
+
+
+

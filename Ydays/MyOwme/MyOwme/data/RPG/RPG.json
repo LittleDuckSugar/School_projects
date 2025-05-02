@@ -1,0 +1,64 @@
+{
+    "start": {
+            "f": {
+                "a" :  "ville",
+                "b": "bois"
+            },
+            "hist": "Salut aventurié , où veux-tu aller pour commencer",
+            "rep": {
+                "a": "En Ville",
+                "b": "Dans les Bois"
+            }
+        },
+    "bois": {
+        "f": {"win":"bois2","loose":"lechateau"},
+        "hist": "",
+        "rep": {"win":"lechateau","loose":"lechateau"},
+        "battle": {
+            "en": {
+                "pv": 100,
+                "name": "Un Goblin",
+                "att": 5,
+                "replique" :  "CouCou",
+                "loot" :{
+                    "att" : 5,
+                    "soin" : 1,
+                    "pvmax": 10,
+                    "effsoin":10,
+                    "lv":1
+                }
+            }
+        }
+    },
+    "bois2": {
+        "f": {"win":"lechateau","loose":"lechateau"},
+        "hist": "",
+        "rep": {"win":"lechateau","loose":"lechateau"},
+        "battle": {
+            "en": {
+                "pv": 100,
+                "name": "Un Gobn",
+                "att": 5,
+                "replique" :  "CouCou",
+                "loot" :{
+                    "att" : 5,
+                    "soin" : 1,
+                    "pvmax": 10,
+                    "effsoin":10,
+                    "lv":1
+                }
+            }
+        }
+    },
+    "ville" : {
+        "f": {"a":"lechateau"},
+        "hist" : "vous voyez un chateau",
+        "rep": {"a":"le beau château"}
+    }
+    ,
+    "lechateau" : {
+        "f": {},
+        "hist" : "GG",
+        "rep": {}
+    }
+}

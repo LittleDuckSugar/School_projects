@@ -1,0 +1,44 @@
+/* ---------------------------------------------------------------
+--------------------Main Content Style----------------------------
+------------------------------------------------------------------ 
+*/
+
+body{
+    background-image: url("../img/wallpaper/Groovy-Gorilla_WP_1920x1080_blank.jpg");
+    background-size: cover ;
+    background-position: center center;
+    background-repeat: no-repeat ;
+}
+
+.flex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.padding {
+    padding: 1vw;
+}
+.margin-right{
+    margin-right: 4vw;
+}
+
+.margin-bottom {
+    margin-bottom: 10vh;
+}
+
+.main_content{
+    /* color: #EB6536; */
+    color: whitesmoke;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    width: 80vw;
+}
+
+.youtube_video{
+    margin-top: 5vh;
+    margin-right: 4vw;
+}
+
+.imageformat img{
+    width: 46.5vw;
+}

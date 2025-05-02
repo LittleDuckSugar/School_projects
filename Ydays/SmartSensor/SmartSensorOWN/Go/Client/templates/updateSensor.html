@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Meta title - titre de la page -->
+    <title>{{.SystemSettings.RoomName}} | Update {{.SystemSettings.SensorName}}</title>
+
+    <!-- lier fichier css -->
+    <link rel="stylesheet" href="/static/css/style.css">
+
+    <meta name="description" content="Edit {{.SystemSettings.SensorName}}">
+
+</head>
+
+<body>
+
+    {{template "header.html" .}}
+
+    <main>
+        <div>
+            <form action="/sensor/{{.SystemSettings.SensorName}}" method="post">
+                <div>
+                    <label for="sensor__name">Change your sensor name : </label>
+                    <input type="text" id="sensor__name" name="sensorName" maxlength="26" required
+                        value="{{.SystemSettings.SensorName}}" placeholder="{{.SystemSettings.SensorName}}">
+                </div>
+
+                <div>
+                    {{ $CurrentRoom := .SystemSettings.RoomName }}
+                    
+                    <label for="roomName">Room : </label>
+                    <select name="roomName" id="roomName">
+                        {{range $name := .RoomAvailable}}
+                        <option value="{{$name}}" {{if eq $name $CurrentRoom}} selected="selected" {{end}}>
+                            {{$name}}</option>
+                        {{end}}
+                    </select>
+                </div>
+
+                <div>
+                    <label for="position">Where is your sensor ?</label>
+                    <input type="text" id="position" name="position" maxlength="26" required
+                        value="{{.SystemSettings.Position}}" placeholder="{{.SystemSettings.Position}}">
+                </div>
+
+                <div>
+                    <label for="etage">Etage </label>
+                    <input type="number" id="etage" name="etage" maxlength="255" required
+                        value="{{.SystemSettings.Etage}}" placeholder="{{.SystemSettings.Etage}}">
+                </div>
+
+                <div>
+                    {{ $CurrentTimezone := .SystemSettings.CurrentTimezone }}
+
+                    <label for="timezone">Timezone : </label>
+                    <select name="timezone" id="timezone">
+                        {{range $timezone := .SystemSettings.Timezones}}
+                        <option value="{{$timezone}}" {{if eq $timezone $CurrentTimezone}} selected="selected" {{end}}>
+                            {{$timezone}}</option>
+                        {{end}}
+                    </select>
+
+                </div>
+
+                <hr>
+
+                <div>
+                    <label for="delay">Delay </label>
+                    <input type="number" id="delay" name="sensorDelay" maxlength="255" required
+                        value="{{.SensorSettings.SensorDelay}}" placeholder="{{.SensorSettings.SensorDelay}}">
+                </div>
+
+                <div>
+                    <p>Allow humidity</p>
+                    <label for="ishumTrue">True</label>
+                    <input type="radio" id="ishumTrue" name="isHum" value="true" required {{if .SensorSettings.IsHum}}checked{{end}}>
+                    <label for="ishumFalse">False</label>
+                    <input type="radio" id="ishumFalse" name="isHum" value="false" required {{if ne .SensorSettings.IsHum
+                        true}}checked{{end}}>
+                </div>
+
+                <br>
+
+                <div>
+                    <p>Allow temperature</p>
+                    <label for="istempTrue">True</label>
+                    <input type="radio" id="istempTrue" name="isTemp" value="true" required {{if
+                        .SensorSettings.IsTemp}}checked{{end}}>
+                    <label for="istempFalse">False</label>
+                    <input type="radio" id="istempFalse" name="isTemp" value="false" required {{if ne .SensorSettings.IsHum
+                        true}}checked{{end}}>
+                </div>
+
+                <br>
+
+                <div>
+                    <p>Allow global write</p>
+                    <label for="isallowedTrue">True</label>
+                    <input type="radio" id="isallowedTrue" name="isAllowed" value="true" required {{if
+                        .SensorSettings.IsTemp}}checked{{end}}>
+                    <label for="isallowedFalse">False</label>
+                    <input type="radio" id="isallowedFalse" name="isAllowed" value="false" required {{if eq .SensorSettings.IsHum
+                        false}}checked{{end}}>
+                </div>
+
+                <br>
+                <hr>
+
+
+                <!-- Upgrade this part with a remembered database that will be ask to send data to instead of asking everydata again (or choose between both choice) -->
+
+                <div>
+                    <label for="influxdb__url">Update to witch database it will send data : </label>
+                    <input type="text" id="influxdb__url" name="influxdbURL" maxlength="28" required
+                        value="{{.InfluxDBConfig.InfluxDBURL}}" placeholder="{{.InfluxDBConfig.InfluxDBURL}}">
+                </div>
+
+                <div>
+                    <label for="influxdb__token">What is your influxdb token ?</label>
+                    <input type="text" id="influxdb__token" name="influxdbTOKEN" maxlength="40"
+                        placeholder="configured">
+                </div>
+
+                <div>
+                    <label for="influxdb__org">Update your org : </label>
+                    <input type="text" id="influxdb__org" name="influxdbORG" maxlength="26" required
+                        value="{{.InfluxDBConfig.InfluxDBOrg}}" placeholder="{{.InfluxDBConfig.InfluxDBOrg}}">
+                </div>
+
+                <div>
+                    <label for="influxdb__bucket">Update your bucket</label>
+                    <input type="text" id="influxdb__bucket" name="influxdbBUCKET" maxlength="26" required
+                        value="{{.InfluxDBConfig.InfluxDBBucket}}" placeholder="{{.InfluxDBConfig.InfluxDBBucket}}">
+                </div>
+
+                <div>
+                    <button type="submit">Save modifications</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    {{template "footer.html" .}}
+
+</body>
+
+</html>

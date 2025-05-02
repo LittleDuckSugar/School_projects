@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Meta title - titre de la page -->
+    <title>My Home | {{.SystemSettings.SensorName}} sensor</title>
+
+    <!-- lier fichier css -->
+    <link rel="stylesheet" href="/static/css/style.css">
+
+    <meta name="description" content="Everything about {{.SystemSettings.SensorName}} sensor">
+
+</head>
+
+<body>
+
+    {{template "header.html" .}}
+
+    <main>
+
+        <div class="title__page">
+            <h1>
+                {{.SystemSettings.SensorName}}
+            </h1>
+        </div>
+
+        <a href="/room/{{.SystemSettings.RoomName}}"><button>Return to {{.SystemSettings.RoomName}}</button></a>
+
+        <hr>
+
+        <div class="system__settings text__center">
+            <p>SensorName : {{.SystemSettings.SensorName}}</p>
+            <p>RoomName : {{.SystemSettings.RoomName}}</p>
+            <p>Position : {{.SystemSettings.Position}}</p>
+            <p>Etage : {{.SystemSettings.Etage}}</p>
+            <p>Username : {{.SystemSettings.Username}}</p>
+            <p>Status : {{.SystemSettings.Status}}</p>
+            <p>CurrentTimezone : {{.SystemSettings.CurrentTimezone}}</p>
+            <p>Timezones : {{.SystemSettings.Timezones}}</p>
+            <p>Version : {{.SystemSettings.Version}}</p>
+            <p>ChipId : {{.SystemSettings.ChipId}}</p>
+            <p>FlashChipId : {{.SystemSettings.FlashChipId}}</p>
+            <p>FlashChipSize : {{.SystemSettings.FlashChipSize}}</p>
+            <p>FlashChipRealSize : {{.SystemSettings.FlashChipRealSize}}</p>
+            <p>FreeHeap : {{.SystemSettings.FreeHeap}}</p>
+        </div>
+
+        <hr>
+
+        <div class="sensor__settings text__center">
+            <p>SensorType : {{.SensorSettings.SensorType}}</p>
+            <p>SensorPin : {{.SensorSettings.SensorPin}}</p>
+            <p>SensorDelay : {{.SensorSettings.SensorDelay}} secondes</p>
+            <p>IsHum: {{.SensorSettings.IsHum}}</p>
+            <p>IsTemp : {{.SensorSettings.IsTemp}}</p>
+            <p>IsAllowed : {{.SensorSettings.IsAllowed}}</p>
+            <p>CurrentHum : {{.SensorSettings.CurrentTemp}}°C</p>
+            <p>CurrentTemp : {{.SensorSettings.CurrentHum}}%</p>
+        </div>
+
+        <hr>
+
+        <div class="influxdb__config text__center">
+            <p>InfluxDBURL : {{.InfluxDBConfig.InfluxDBURL}}</p>
+            <p>InfluxDBToken : {{.InfluxDBConfig.InfluxDBToken}}</p>
+            <p>InfluxDBOrg : {{.InfluxDBConfig.InfluxDBOrg}}</p>
+            <p>InfluxDBBucket : {{.InfluxDBConfig.InfluxDBBucket}}</p>
+            <p>Status : {{.InfluxDBConfig.Status}}</p>
+            <p>IsConnected : {{.InfluxDBConfig.IsConnected}}</p>
+        </div>
+
+        <hr>
+
+        <div class="network__settings text__center">
+            <p>SSID : {{.NetworkSettings.SSID}}</p>
+            <p>IP : {{.NetworkSettings.IP}}</p>
+            <p>APIPort : {{.NetworkSettings.APIPort}}</p>
+            <p>MAC : {{.NetworkSettings.MAC}}</p>
+            <p>Gateway : {{.NetworkSettings.Gateway}}</p>
+            <p>SubnetMask : {{.NetworkSettings.SubnetMask}}</p>
+            <p>SignalStrengh : {{.NetworkSettings.SignalStrengh}}</p>
+        </div>
+
+        <div>
+            <a href="/updateSensor/{{.SystemSettings.SensorName}}"><button>Update this sensor</button></a>
+        </div>
+    </main>
+
+    {{template "footer.html" .}}
+
+</body>
+
+</html>

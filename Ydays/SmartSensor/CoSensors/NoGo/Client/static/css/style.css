@@ -1,0 +1,138 @@
+html,
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'BlinkMacSystemFont';
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.footer__main {
+    padding: 20px;
+    background: lightgray;
+}
+
+
+.header__main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.header__main .header__logo img {
+    width: 100px;
+}
+
+.header__main .header__nav .nav__list {
+    display: flex;
+    list-style: none;
+}
+
+.header__main .header__nav .nav__item {
+    margin: 0px 20px;
+}
+
+.header__main .header__nav .nav__link {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.header__main .header__nav .nav__link:hover {
+    color: #71acd7;
+}
+
+.room__grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.room__grid .room__card {
+    width: 15%;
+    margin: 20px;
+}
+
+.room__grid .room__card .room__img img {
+    width: 400px;
+    height: auto;
+}
+
+.room__grid .room__card .room__data h2 {
+    font-size: 15px;
+}
+
+.sensor__grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.sensor__grid .sensor__card {
+    width: 15%;
+    margin: 20px;
+}
+
+.sensor__grid .sensor__card .sensor__img img {
+    width: 150px;
+    height: auto;
+}
+
+.sensor__grid .sensor__card .sensor__data h2 {
+    font-size: 15px;
+}
+
+.title__page {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 20px;
+    letter-spacing: 2px;
+    color: #71acd7;
+    font-family: 'BlinkMacSystemFont';
+}
+
+.text__center {
+    text-align: center;
+}
+
+.text__right {
+    text-align: right;
+}
+
+.text__left {
+    text-align: left;
+}
+
+.btn {
+    border: none;
+    padding: 15px 20px;
+    background-color: none;
+    text-transform: uppercase;
+    transition: 0.3s all;
+}
+.btn__color-black {
+    background: black;
+    color: white;
+}
+.btn__color-black:hover {
+    background: white;
+    border: 1px solid black;
+    color: black;
+    transition: 0.3s all;
+}
+.btn__color-white {
+    border: 1px solid black;
+    color: black;
+}
+.btn__color-white:hover {
+    background: black;
+    color: white;
+    transition: 0.3s all;
+}

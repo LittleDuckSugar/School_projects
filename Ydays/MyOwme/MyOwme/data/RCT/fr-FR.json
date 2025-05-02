@@ -1,0 +1,22 @@
+{
+    "temp" : {
+        "keyswords":["temps","température","m'habille","s'habille","t'habille","sortir"],
+        "func" : "def main(t):\n\tfor i in t:\n\t\tif i in [\"aujourd'hui\",'demain','lundi','mardi','jeudi','vendredi','samedi','dimanche']:\n\t\t\treturn i\n\treturn \"aujourd'hui\""
+    },
+    "jeu" : {
+        "keyswords":["jeu","jouons"],
+        "func" : "def main(t):\n\tfor i in t:\n\t\tif i in ['shifumi','rpg']:\n\t\t\treturn i\n\treturn 'shifumi'"
+    },
+    "rpg" : {
+        "keyswords":["rpg"],
+        "func": ""
+    },
+    "calcul" : {
+        "keyswords":["calcul","calcul mental"],
+        "func" : "def main(t):\n\tif t in ['calcul']:\n\t\t\treturn 'calcul'\n\treturn'calcul'"
+    },
+    "music" : {
+        "keyswords":["music","ambiance","son","joue"],
+        "func" : ""
+    }
+}  

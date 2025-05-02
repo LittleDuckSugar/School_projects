@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="authors" content="Groupe IOT - Ydays - Ynov">
+        <meta name="description" content="MyOwme - Assistant Virtuel">
+        <title>{{page.title}}</title>
+        <!-- link css -->
+        <link rel="stylesheet" href="/assets/css/navbar.css">
+        <link rel="stylesheet" href="/assets/css/teams.css">
+        <link rel="icon" href="/assets/img/icon/iconMyOw-64.png">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    </head>
+<body>
+    <header>
+        {% include nav.html %}
+    </header>
+
+    <div class="contentTeam">
+        {% for prof in site.teams %}
+            <div class="card">
+                <div class="card_photo flex">
+                    <img src="{{prof.imgprof}}" alt="Photo de Profil">
+                </div>
+                <div class="card_about textalign margin">
+                    <h2> {{ prof.name }} </h2>
+                    <p> {{ prof.role }} </p>
+                </div>
+                <div class="button flex">
+                    <button><a href="{{ prof.link}}" title="Mon Linkedin"><img src="../assets/img/icon/linkedin.png" alt="linkedin"></a></button>
+                    <button><a href="{{prof.mail}}" title="Contactez-moi par mail"><img src="../assets/img/icon/gmail.png" alt="email"></a></button>
+                    <button><a href="{{prof.github}}" title="Mon Github"><img src="../assets/img/icon/github-sign.png" alt="Github"></a></button>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+<script src="../assets/js/script.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+</html>

@@ -1,0 +1,16 @@
+- Paramètres :
+	- Luminosité;
+	- Volume ; 
+	- Thèmes ;
+	- Fonds d'écran ;
+	- Position ; 
+	- Langues ;
+	- Temps de veille ; 
+- Calendrier ;
+- Memo Vocal ;
+- Application Cuisine (Recettes) ;
+- Info --> LeMonde en widget ;
+- Jeux 
+
+
+Faire un pdf + txt pour expliquer les fonctionnalités de chaque page !

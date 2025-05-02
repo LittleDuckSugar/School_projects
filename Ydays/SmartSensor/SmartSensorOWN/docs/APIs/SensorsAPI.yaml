@@ -1,0 +1,76 @@
+openapi: 3.0.3
+info:
+  title: SensorsAPI
+  version: '0.3'
+  description: Allow a distant configuration of a smart sensor
+  x-logo:
+    url: https://littleducksugar.github.io/MyOwme/assets/img/icon/iconMyOw-64.png
+servers:
+  - url: http://sensorIP:5536
+    description: ''
+    x-last-modified: 1645456018408
+paths:
+  /system:
+    summary: System settings
+    description: >-
+      System settings are mainly informations about the sensor like the room
+      name or the sensor name
+    get:
+      responses:
+        '200':
+          description: Successfully received system settings
+          x-last-modified: 1645457802994
+          headers: {}
+          content: {}
+          links: {}
+      tags: []
+    post:
+      responses:
+        '200':
+          description: Successfully received system settings
+          x-last-modified: 1645457802994
+          headers: {}
+          content: {}
+          links: {}
+      tags: []
+    x-last-modified: 1645455961815
+  /influxdb:
+    summary: System settings
+    description: >-
+      System settings are mainly informations about the sensor like the room
+      name or the sensor name
+    get:
+      responses:
+        '200':
+          description: Successfully received system settings
+          x-last-modified: 1645457802994
+          headers: {}
+          content: {}
+          links: {}
+      tags: []
+    post:
+      responses:
+        '200':
+          description: Successfully received system settings
+          x-last-modified: 1645457802994
+          headers: {}
+          content: {}
+          links: {}
+      tags: []
+    x-last-modified: 1645455961815
+components:
+  securitySchemes:
+    BasicAuth:
+      scheme: bearer
+      bearerFormat: ''
+      type: http
+      description: |-
+        Example: 
+        > Authorization: Basic ZGVtbzpwQDU1dzByZA ==
+      x-last-modified: 1645455829567
+  schemas: {}
+  headers: {}
+  responses: {}
+  parameters: {}
+tags: []
+security: []

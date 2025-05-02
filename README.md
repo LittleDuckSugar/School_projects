@@ -11,7 +11,7 @@
 * [GoLang](#golang)
 * [Java](#java)
 * [NextJS](#nextjs)
-
+* [Ydays](#ydays)
 
 ## Challenge48h
 
@@ -95,3 +95,14 @@
     - Client of [TheMovieDB](https://www.themoviedb.org/) to provide a Netflix like experience (without movies)
     - NextJS
 
+## Ydays
+
+**Projects made in Ydays at Ynov**
+
+- ### MyOwme
+    - Homemade Google Home
+    - Python
+
+- ### SmartSensor
+    - Connect DHT22 sensors to Wifi
+    - Arduino

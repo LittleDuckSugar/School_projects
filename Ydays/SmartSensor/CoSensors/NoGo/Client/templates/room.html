@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Meta title - titre de la page -->
+    <title>My Home | {{.Name}} </title>
+
+    <!-- lier fichier css -->
+    <link rel="stylesheet" href="/static/css/style.css">
+
+    <meta name="description" content="Everything about your {{.Name}}">
+
+</head>
+
+<body>
+
+    {{template "header.html" .}}
+
+    <main>
+        <div class="title__page">
+            <h1>
+                {{.Name}}
+            </h1>
+        </div>
+        <div class="text__center">
+            <p>Average temperature in the room : {{.AverageTemp}} °C</p>
+            <p>Average humidity in the room : {{.AverageHum}} %</p>
+            <p>Area : {{.Area}} m²</p>
+        </div>
+
+        <div class="sensor__grid">
+            {{range $Sensor := .Sensors}}
+            <a href="/sensor/{{$Sensor.SystemSettings.SensorName}}">
+                <div class="sensor__card">
+                    <div class="sensor__img">    
+                        <img src="/static/images/{{$Sensor.SensorSettings.SensorType}}.jpg" alt="{{$Sensor.SensorSettings.SensorType}}" />
+                    </div>
+                    <div class="sensor_data">
+                        <h2>{{$Sensor.SystemSettings.SensorName}}</h2>
+                        <p>{{$Sensor.SensorSettings.CurrentTemp}} °C</p>
+                        <p>{{$Sensor.SensorSettings.CurrentHum}} %</p>
+                    </div>
+                </div>
+            </a>
+            {{end}}
+        </div>
+        <div>
+            <a href="/deleteRoom/{{.Name}}"
+                onclick="return confirm('Are you sure you want to delete this room ?');"><button>Delete this
+                    room</button></a>
+        </div>
+        <div>
+            <a href="/updateRoom/{{.Name}}"><button>Update this room</button></a>
+        </div>
+    </main>
+
+    {{template "footer.html" .}}
+
+</body>
+
+</html>

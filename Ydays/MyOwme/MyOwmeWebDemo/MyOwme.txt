@@ -1,0 +1,36 @@
+```txt
+Bonjour à vous ! 
+Comme prévenu, je ne suis pas présent aujourd'hui.
+J'attends de vous un travail que vous me renderez à la fin de journée sur Discord 18h au plus tard et ce peut importe l'état d'avancement.
+Vous allez devoir faire un site web hébergé sur GitHub en utilisant Jekyll (https://jekyllrb.com/)
+Afin de réussir au mieux votre mission, je vous ai mis en place le repo suivant : https://github.com/LittleDuckSugar/MyOwmeWebDemo (Vous devez accepter l'invitation envoyé vers 00h30)
+L'objectif de cette séance est de vous faire découvrir un moyen de faire des sites web différement. (Utilisation de .scss, Liquid (https://shopify.github.io/liquid/), ...)
+
+LIRE INTEGRALLEMENT LE SUJET AVANT DE COMMENCER
+
+Pour bien commencer, je vous invite à réaliser, dans un premier temps localement, le code en suivant le tuto de Jekyll : https://jekyllrb.com/docs/step-by-step/01-setup/
+Bien évidement, au préalable il faudra installer localement les outils nécessaires : https://jekyllrb.com/docs/installation/
+Une fois le tuto fini, vous avez plusieurs chose à faire dans l'ordre : 
+ - Mettre en place un theme de Jekyll localement (https://jekyllrb.com/docs/themes/) (par exemple https://github.com/pages-themes/cayman) MAIS BIEN LOCALEMENT
+ - Rédiger la page Equipe de MyOwme sur ce site web (https://littleducksugar.github.io/MyOwme/assets/html/team.html) avec une mise en forme correct en utilisant du .scss (SCSS pas CSS !)
+ - Push sur GitHub le code réaliser localement
+ - Mettre en place la mise en production du code avec une action workflow sur GitHub
+
+Bilan avancement Ydays :
+Il reste actuellement 5 séances en comptant celle d'aujourd'hui
+Il reste donc normalement 4 séances où je serais présent.
+Parmis ces 4 séances la dernière ou l'avant dernière devrait se trouver votre examen de semestre 2 de Ydays.
+Cela veut donc dire qu'il reste globalement 3 séances pleine.
+
+Pour la partie code en Python il va donc falloir arreter l'ajout de fonctionnalitées (sauf fonctionnalitée.s très rapide à implémenter) et passer sur une phase de test et de debug.
+Cette phase de test et de debug devra être accompagner par une liste de choses à corriger, une liste de choses à ajouter (nouvelle.s fonctionnalitée.s) et une liste de tout ce qui a été implémenté et corrigé au court de ce semestre. Ces listes peuvent utiliser l'onglet 'Projects' de Github du repo (https://github.com/LittleDuckSugar/MyOwme/projects) voir même la partie beta si vous voulez vous y essayer (https://github.com/LittleDuckSugar/MyOwme/projects?type=beta)
+
+Je vous demande de me lister plusieurs éléments qui vous semble à vous nécessaire à implémenter. (Des fonctionnalitées qui ne sont pas présente et qui vous semblerait interressante à implémenter)
+
+J'attends pour 18h au plus tard le code sur GitHub et ce peut importe l'avancer de celui-ci.
+Le reste sera a me communiquer sur Discord avant 18h aussi.
+
+Si jamais ces consignes ne sont pas clair je vous invite à me poser des questions sur Discord. Même si je suis pas disponible j'essaierais d'y répondre au plus vite et le plus clairement possible.
+
+Bon courage et bonne journée à vous !
+```

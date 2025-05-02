@@ -1,0 +1,91 @@
+---
+---
+html,
+body {
+    margin: 0;
+    overflow-x: hidden;
+    background-color: whitesmoke;
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+
+/* ---------------------------------------------------------------
+--------------------Navbar Style----------------------------------
+------------------------------------------------------------------ 
+*/
+
+nav {
+    background-color : rgb(17, 17, 17);
+    height: 10vh;
+    color: #EB6536;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.navTitle a {
+    color: #EB6536;
+    text-decoration: none;
+    font-size: 35px;
+    font-weight: 900;
+}
+
+
+.navMenu {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 1.5em;
+    top: 0;
+    width: 50vw;
+    height: 100vh;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    transform: translateX(100vw);
+    transition: transform ease 0.5s;
+}
+
+.navMenu a {
+    text-decoration: none;
+    color: #EB6536;
+}
+
+.navMenu a:hover {
+    color: #77216F;   
+}
+
+.navMenuActive {
+    transform: translateX(0vw) ;
+}
+
+
+/* Menu Burger */
+.navBurgerMenu {
+    cursor: pointer;
+    transform: translateX(0vw);
+}
+
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color:#EB6536;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-8px, 6px);
+}
+.change .bar2 {
+    opacity: 0;
+}
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-10px, -8px);
+}

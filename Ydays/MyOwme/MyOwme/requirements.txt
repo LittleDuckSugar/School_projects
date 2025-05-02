@@ -1,0 +1,43 @@
+# Used for offline speech recognition
+# @ https://github.com/alphacep/vosk-api
+vosk
+
+# Used for audio playback
+# @ https://www.pygame.org/news
+pygame
+
+# WIP audio
+python-vlc
+
+# Used for online speech recognition
+# @ https://github.com/Uberi/speech_recognition
+speechrecognition
+
+# Used to allow a mic to be used as audio input for the speech_recognition package
+# @ https://people.csail.mit.edu/hubert/pyaudio/
+pyaudio
+
+# Used for testing internet connectivity
+# @ https://github.com/urllib3/urllib3
+urllib3
+
+# Used for weather info
+# @ https://github.com/csparpa/pyowm
+pyowm
+
+# Used for serial communication
+# @ https://github.com/pyserial/pyserial
+pyserial
+
+# Used for internet connection test
+urllib3
+
+# Used for sensors - DEPRECATED -> Using the SmartSensor project instead ( @ https://github.com/LittleDuckSugar/SmartSensor)
+# Adafruit-DHT
+# Adafruit-PureIO
+
+###### Requirements with Version Specifiers ######`
+#example == 0.6.1             # Version Matching. Must be version 0.6.1
+#example >= 4.1.1            # Minimum version 4.1.1
+#example != 3.5             # Version Exclusion. Anything except version 3.5
+#example ~= 1.1        # Compatible release. Same as >= 1.1, == 1.*

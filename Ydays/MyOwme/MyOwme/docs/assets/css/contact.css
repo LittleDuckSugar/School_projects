@@ -1,0 +1,93 @@
+
+body{
+
+  background-image: url("../img/wallpaper/Groovy-Gorilla_WP_1920x1080_blank.jpg");
+  background-size: cover ;
+  background-position: center center;
+  background-repeat: no-repeat ;
+  margin: 0px;
+  padding: 0px;
+  
+}
+.flex{
+display: flex;
+justify-content: center;
+}
+form {
+border-radius: 10px;
+}
+
+form h1 {
+margin-bottom:60px;
+font-size: 20px;
+
+}
+form .corps-formulaire {
+
+margin-right: 50px;
+
+}
+form .corps-formulaire .groupe {
+margin-top: 10px;
+}
+
+form .corps-formulaire .gauche .groupe input {
+margin-top: 5px;
+border: 1px solid #c9c9c9;
+border-radius: 5px;
+width: 300px;
+}
+
+form .corps-formulaire .gauche {
+margin-left: 70px;
+background-color: #f1f1f1;
+padding: 10px 10px 10px 20px;
+border: 1px solid #c9c9c9;
+border-radius: 15px 0px 0px 15px;
+}
+
+form .corps-formulaire .gauche label {
+margin-right: 10px;
+}
+
+form .corps-formulaire .droite {
+background-color: #f1f1f1;
+padding: 10px 20px 10px 10px;
+border: 1px solid #c9c9c9;
+border-radius: 0px 15px 15px 0px;
+}
+
+form .corps-formulaire .droite .groupe textarea {
+background-color: #f1f1f1;
+border-radius: 5px;
+margin-left: 10px;
+height: 100px;
+width: 300px
+}
+
+form .pied-formulaire button {
+background-color: #6E3C61;
+margin-right: 700px;
+margin-top: 20px;
+font-size: 15px;
+border: none;
+padding: 10px 20px;
+border-radius: 5px;
+cursor: pointer;
+color: #EB6536
+
+}
+
+.NousContacter{
+width: auto;  
+text-align: center;
+display: block;
+padding-top: 10vh;
+}
+.colorOrange{
+font-style: italic;
+color: #EB6536;
+}
+
+
+

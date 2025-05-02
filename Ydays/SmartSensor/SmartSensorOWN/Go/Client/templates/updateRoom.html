@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Meta title - titre de la page -->
+    <title>My Place | Update {{.Name}}</title>
+
+    <!-- lier fichier css -->
+    <link rel="stylesheet" href="/static/css/style.css">
+
+    <meta name="description" content="Edit your {{.Name}}">
+
+</head>
+
+<body>
+
+    {{template "header.html" .}}
+
+    <main>
+        <div>
+            <form action="/room/{{.Name}}" method="post">
+
+                <input hidden type="text" name="create" value="false">
+
+                <div>
+                    <label for="room__name">Change your room name : </label>
+                    <input type="text" id="room__name" name="roomName" maxlength="26" required value="{{.Name}}"
+                        placeholder="{{.Name}}">
+                </div>
+
+                <div>
+                    <label for="room__area">Update your room area : </label>
+                    <input type="number" id="room__area" name="roomArea" maxlength="4" required value="{{.Area}}"
+                        placeholder="{{.Area}}">
+                </div>
+
+                <div>
+                    <button type="submit">Save modifications</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    {{template "footer.html" .}}
+
+</body>
+
+</html>

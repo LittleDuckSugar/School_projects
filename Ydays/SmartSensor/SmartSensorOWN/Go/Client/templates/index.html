@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Meta title - titre de la page -->
+    <title>{{.Name}} | Main page</title>
+
+    <!-- lier fichier css -->
+    <link rel="stylesheet" href="/static/css/style.css">
+
+    <meta name="description" content="The main page of your smart sensors">
+</head>
+
+<body>
+
+    {{template "header.html" .}}
+
+    <main>
+        <div class="title__page">
+            <h1>
+                {{.Name}}
+            </h1>
+        </div>
+
+        <div class="room__grid">
+            {{range $room := .Rooms}}
+            <a href="/room/{{$room.Name}}">
+                <div class="room__card">
+                    <div class="room__img">
+                        <img src="/static/images/room.jpg" alt="{{$room.Name}}" />
+                    </div>
+                    <div class="room__data">
+                        <h2>{{$room.Name}}</h2>
+                        <p>Other infos</p>
+                        <p>
+                            <button class="btn btn__color-black">Voir la pièce</button>
+                        </p>
+                    </div>
+                </div>
+            </a>
+            {{end}}
+        </div>
+
+        <div>
+            <a href="/createRoom"><button>Create a new room</button></a>
+        </div>
+
+        <div class="reset__part">
+            <a href="http://localhost:3000/reset">Click here to reset API</a>
+        </div>
+
+    </main>
+
+    {{template "footer.html" .}}
+
+</body>
+
+</html>

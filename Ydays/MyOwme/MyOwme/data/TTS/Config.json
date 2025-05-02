@@ -1,0 +1,22 @@
+{
+    "fr-FR": {
+        "country": "Entrer le code de votre pays (France = FR)",
+        "name": "Entrer Votre Prénom :",
+        "city": "Entrer le nom de votre ville :",
+        "anniv": [
+            "Quel est ton jour de naissance",
+            "Quel est ton mois de naissance",
+            "Quel est ton année de naissance"
+        ]
+    },
+    "en-US": {
+        "country": "country",
+        "name": "name :",
+        "city": "city :",
+        "anniv": [
+            "day",
+            "m",
+            "y"
+        ]
+    }
+}
